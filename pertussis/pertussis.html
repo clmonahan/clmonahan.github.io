@@ -373,14 +373,15 @@
           <p>
             <strong>Figure 5</strong> - Correlation matrix of the 9 features considered for analysis
             <br><br>
-            <br><br>
             <a href="https://github.com/timothybarry/ML-Capstone-Project-Repo/blob/master/Immunology%20Study.ipynb">View
-              the full notebook here</a>
+              the full machine learning jupyter notebook here</a>
             <br><br>
-            Of the 10 features that were analyzed as part of the multivariate regression analysis, 5 were found to
-            correlate to a future outbreak.
-            A linear regression was run on each of these features to glean additional information. Click on the features
-            listed below to learn more.
+            The correlation matrix was used to select which features to use for regression analysis. We selected the top 5 features based on their 
+            correlation to the outbreak percentage. A linear regression was run on each of these features to glean additional information.
+            <br><br>
+             <strong> Click on the features
+            listed below to learn more.</strong>
+              <br>
           </p>
 
           <ul class="navbar-nav ml-auto">
@@ -406,7 +407,7 @@
           <section id="vax">
             <div class="row">
               <div class="col-lg-8 mx-auto">
-                <h2>Vaccination Rate</h2>
+                <h2>Kindergarten Vaccination Rate</h2>
                 <br>
 
                 <img class="img-fluid" src="images/linear.png" alt="Linear Regression">
@@ -456,6 +457,9 @@
                   <p>
                     <strong>Figure 9</strong> - Logistic regression plot of number of years since last outbreak to
                     outbreak probability
+                    <br><br>
+                    Looking at the Tableau visualization (Figures 3 & 4 above) we could visually see that there is a cyclical nature to the outbreaks. We opted to 
+                    further explore this pattern and found a correlation between the time in years since the last outbreak and future outbreaks. 
                   </p>
                 </div>
               </div>
@@ -470,11 +474,17 @@
                 <img class="img-fluid" src="images/foreign_linear.png" alt="Foreign Born">
                 <p>
                   <strong>Figure 10</strong> - Linear regression plot of population that is foreign born versus probability of accuracy
+                  <br><br>
+                  When we visualized the linear regression for foreign born population in each county against accuracy, we found minimal influence on the 
+                  accuracy of the model, as can be seen by the near-zero slope of the regression line.
                 </p>
+                <br><br>
                 <img class="img-fluid" src="images/foreign_born_log.png" alt="Foreign Born">
                 <p>
                   <strong>Figure 11</strong> - Logistic regression plot of percent of population that is foreign born to
                   outbreak probability
+                  <br><br>
+                  The probability does not vary widely over the entire range of the population percentages, which demonstrates the weak correlation in Figure 10.
                 </p>
               </div>
             </div>
@@ -491,11 +501,16 @@
                 <p>
                   <strong>Figure 12</strong> - Linear regression plot of population that moved from overseas in the past
                   year versus probability of accuracy
+                  <br><br>
+                  There appears to be a slight correlation here.
                 </p>
                 <img class="img-fluid" src="images/overseas_move_log.png" alt="Foreign Born">
                 <p>
                   <strong>Figure 13</strong> - Logistic regression plot of percent of population that moved from
                   overseas in the past year to outbreak probability
+                  <br><br>
+                  We can see in the above graph that the percentage of the population in all counties that moved from overseas is less than 2%, which is likely why this 
+                  feature has a weak correlation.
                 </p>
               </div>
             </div>
@@ -511,10 +526,16 @@
                 <img class="img-fluid" src="images/poverty_linear.png" alt="Kindergarten Poverty Linear">
                 <p>
                   <strong>Figure 14</strong> - Linear regression plot of percent of Kindergarten population whose family income is below the poverty line versus probability of accuracy
+                  <br><br>
+                  This feature is one of the stronger indicators that we found in our analysis, as can be seen in the chart above. The fact that it is a negative correlation is interesting, 
+                  and provides some evidence of our speculations potentially being correct.
+                  <br><br>
                 </p>
                 <img class="img-fluid" src="images/below_poverty_log.png" alt="Kindergarten Poverty Logistic">
                 <p>
                   <strong>Figure 15</strong> - Logistic regression plot of percent of Kindergarten population whose family income is below the poverty line to outbreak probability
+                  <br><br>
+                  The wider range of probabilities over the percentage of kids from low-poverty households strengthens the correlation.
                 </p>
               </div>
             </div>
@@ -548,14 +569,7 @@
               <li>Year to year changes in kindergarten vaccination rates only relates to a small portion of the
                 population and does not reflect the same amount of change in the general population vaccination rate.
               </li>
-            </ul>
-
-            To improve prediction model:
-            <br><br>
-            <ul>
-              <li>Look for more features to include in the model that contribute to the spread of pertussis.</li>
-              <li>Use social media feeds to detect possible incidents of pertussis.</li>
-              <li>Potential factors:
+              <li>Access to additional datasets limited the model. Additional potential factors could include:
                 <ul>
                   <li>Population density of county or biggest city in county.</li>
                   <li>Proximity to international airport and number of flights to countries affected by pertussis.</li>
@@ -563,8 +577,14 @@
                   <li>Vaccination rates for general population.</li>
                 </ul>
               </li>
-              <li>Zika virus machine learning model as inspiration for future model</li>
             </ul>
+            As we added more features to our logistic regression, our data set lost a span of data point by a significant amount. 
+            We went from a 16 year span in our initial single feature linear regression to six years in our final model due to the limitation of data availability. 
+            While we did find other features with a notable correlation that would strengthen our ability to predict an outbreak, we lost nearly two thirds of our yearly data, weakening our model. 
+            Thus, an inherent problem in data science - the limitation of data.
+            <br><br>
+            <strong>Zika virus machine learning model as inspiration for future model</strong>
+            <br><br>
             <img class="img-fluid" src="images/zika.png" alt="Zika Model">
           </p>
         </div>
@@ -607,7 +627,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">© 2019 Chelsea Monahan, Tim Barry, & Steve Bogdan</p>
+      <p class="m-0 text-center text-white">© 2019 <a href="chelseamonahan.com">Chelsea Monahan</a>, <a href="https://www.linkedin.com/in/timothy-barry-a4432510/">Tim Barry</a>, & <a href="https://www.linkedin.com/in/stevebogdan/">Steve Bogdan</a> </p>
     </div>
     <!-- /.container -->
   </footer>
