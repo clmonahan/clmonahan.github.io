@@ -104,7 +104,7 @@
             <li>Mayo Clinic: <a
                 href="https://www.mayoclinic.org/diseases-conditions/whooping-cough/symptoms-causes/syc-20378973">Information
                 on Whooping Cough</a>.
-              <br><br> "Whooping cough is caused by a type of bacteria called Bordetella pertussis. When an infected
+              <br><br> "Whooping cough is caused by a type of bacteria called Bordetella Pertussis. When an infected
               person coughs or sneezes, tiny germ-laden droplets are sprayed into the air and breathed into the lungs of
               anyone who happens to be nearby."
             </li>
@@ -141,12 +141,12 @@
     <div class="row">
       <div class="col-lg-8 mx-auto">
         <h2>About Vaccines</h2> -->
-        <!-- <div class="embed-responsive embed-responsive-16by9">
+  <!-- <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/S3oZrMGDMMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div> -->
-        <!-- Insert image -->
-        <!-- <p class="lead">Insert list of research about pertussis and why we don't want it coming back.</p> -->
-        <!-- <img class="img-fluid" src="images/vaccination.png" alt="Vaccination">
+  <!-- Insert image -->
+  <!-- <p class="lead">Insert list of research about pertussis and why we don't want it coming back.</p> -->
+  <!-- <img class="img-fluid" src="images/vaccination.png" alt="Vaccination">
         <br>
         <img class="img-fluid" src="images/herd_immunity.png" alt="Herd Immunity">
         <a
@@ -155,9 +155,9 @@
           <img class="img-fluid" src="images/pertussis_vax.jpg" alt="Who Should Get Vaccinated?" class="center"></a>
         <br><br><br>
         <h3>So What's the Problem?</h3> -->
-        <!-- <br><br>
+  <!-- <br><br>
         <img class="img-fluid" src="images/CDC.png" alt="Center for Disease Control"> -->
-        <!-- <br>
+  <!-- <br>
         <img class="img-fluid" src="images/anti_vaccination.png" alt="Anti-Vaccination">
         <br><br>
         <ul>
@@ -372,140 +372,160 @@
           <p>
             INSERT CORRELATION MATRIX IMAGE
             <br><br>
-            <a href="https://github.com/timothybarry/ML-Capstone-Project-Repo/blob/master/Immunology%20Study.ipynb">View the full notebook here</a>
+            <a href="https://github.com/timothybarry/ML-Capstone-Project-Repo/blob/master/Immunology%20Study.ipynb">View
+              the full notebook here</a>
             <br><br>
-            Of the 10 features that were analyzed as part of the multivariate regression analysis, 4(?) were found to correlate to a future outbreak. 
-            A linear regression was run on each of these features to glean additional information. Click on the features listed below to learn more.
+            Of the 10 features that were analyzed as part of the multivariate regression analysis, 5 were found to
+            correlate to a future outbreak.
+            A linear regression was run on each of these features to glean additional information. Click on the features
+            listed below to learn more.
           </p>
 
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#time">Time Since Outbreak</a>
+              <a class="nav-link js-scroll-trigger" href="#vax">Kintergarten Vaccination Rate</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#vax">Vaccination Rate</a>
+                <a class="nav-link js-scroll-trigger" href="#time">Years Since Last Pertussis Outbreak</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#born">Percent of Population Born Outside the U.S.</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#born">Foreign Born</a>
+              <a class="nav-link js-scroll-trigger" href="#move">Percent of Population that Moved from Overseas in the Past Year</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#move">Moved from Overseas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#poverty">Poverty Level</a>
+              <a class="nav-link js-scroll-trigger" href="#poverty">Percent of the Kindergarten Population Below the Poverty Line</a>
             </li>
           </ul>
 
-          <section id="time">
+
+
+          <section id="vax">
             <div class="row">
               <div class="col-lg-8 mx-auto">
-                <h2>Years Since Last Outbreak</h2>
+                <h2>Vaccination Rate</h2>
                 <br>
-                <img class="img-fluid" src="images/outbreak_years.png" alt="Foreign Born">
+
+                <img class="img-fluid" src="images/linear.png" alt="Linear Regression">
                 <p>
-                  <strong>Figure 5</strong> - Logistic regression plot of number of years since last outbreak to outbreak probability
+                  <strong>Figure 5</strong> - Linear Regression plot of training data vs predicted
+                  <br><br>
+                  Predicted line has a shallow slope that shows a decreasing pertussis outbreak rate as the vaccination
+                  rate
+                  increases.
+                  Looking at the distribution of the training data plotted we can infer that the correlation between
+                  vaccination
+                  rate and pertussis cases is not very strong.
                 </p>
+                <br>
+                <img class="img-fluid" src="images/accuracy.png" alt="Logistical Regression">
+                <p>
+                  <strong>Figure 6</strong> - Plot of incident threshold vs model accuracy
+                  <br><br>
+                  The plot shows that the higher the threshold set is to determine the greater the accuracy of the
+                  model. Based
+                  on the plot, we selected 10 as the threshold to run our logistic regression on.
+                </p>
+                <br>
+                <img class="img-fluid" src="images/logistical.png" alt="Logistical Regression">
+                <p>
+                  <strong>Figure 7</strong> - Logistic Regression plot of test data vs probability
+                  <br><br>
+                  Because the scatter plot of the linear regression seems to show a clusters of low incident and high
+                  incident,
+                  we decided to also do a logistic regression to predict outbreak vs. no outbreak.
+                  The plot of the regression data shows a higher probability of no outbreak as the vaccination rate
+                  increases,
+                  which is what we expected.
+                </p>
+
               </div>
             </div>
 
-  </section>
+          </section>
 
-  <section id="vax">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h2>Vaccination Rate</h2>
-        <br>
+          <section id="time">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <h2>Years Since Last Outbreak</h2>
+                  <br>
+                  <img class="img-fluid" src="images/years_since_outbreak_log.png" alt="Foreign Born">
+                  <p>
+                    <strong>Figure 8</strong> - Logistic regression plot of number of years since last outbreak to
+                    outbreak probability
+                  </p>
+                </div>
+              </div>
+            </section>
 
-        <img class="img-fluid" src="images/linear.png" alt="Linear Regression">
-        <p>
-          <strong>Figure 6</strong> - Linear Regression plot of training data vs predicted
-          <br><br>
-          Predicted line has a shallow slope that shows a decreasing pertussis outbreak rate as the vaccination rate
-          increases.
-          Looking at the distribution of the training data plotted we can infer that the correlation between vaccination
-          rate and pertussis cases is not very strong.
-        </p>
-        <br>
-        <img class="img-fluid" src="images/accuracy.png" alt="Logistical Regression">
-        <p>
-          <strong>Figure 7</strong> - Plot of incident threshold vs model accuracy
-          <br><br>
-          The plot shows that the higher the threshold set is to determine the greater the accuracy of the model. Based
-          on the plot, we selected 10 as the threshold to run our logistic regression on.
-        </p>
-        <br>
-        <img class="img-fluid" src="images/logistical.png" alt="Logistical Regression">
-        <p>
-          <strong>Figure 8</strong> - Logistic Regression plot of test data vs probability
-          <br><br>
-          Because the scatter plot of the linear regression seems to show a clusters of low incident and high incident,
-          we decided to also do a logistic regression to predict outbreak vs. no outbreak.
-          The plot of the regression data shows a higher probability of no outbreak as the vaccination rate increases,
-          which is what we expected.
-        </p>
+          <section id="born">
+            <!-- <div class="container-fluid"> -->
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2>Percent of Population that is Foreign Born</h2>
+                <br>
+                <img class="img-fluid" src="images/foreign_born_log.png" alt="Foreign Born">
+                <p>
+                  <strong>Figure 9</strong> - Linear regression plot of population that is foreign born versus rate of
+                  pertussis incidents
+                </p>
+                <img class="img-fluid" src="images/foreign_linear.png" alt="Foreign Born">
+                <p>
+                  <strong>Figure 10</strong> - Logistic regression plot of percent of population that is foreign born to
+                  outbreak probability
+                </p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </section>
 
+          <section id="move">
+            <!-- <div class="container-fluid"> -->
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2>Percent of Population that Moved from Overseas in the Last Year</h2>
+                <br>
+                <img class="img-fluid" src="images/overseas_move_linear.png" alt="Foreign Born">
+                <p>
+                  <strong>Figure 11</strong> - Linear regression plot of population that moved from overseas in the past
+                  year versus rate of pertussis incidents
+                </p>
+                <img class="img-fluid" src="images/overseas_move_log.png" alt="Foreign Born">
+                <p>
+                  <strong>Figure 12</strong> - Logistic regression plot of percent of population that moved from
+                  overseas in the past year to outbreak probability
+                </p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </section>
+
+          <section id="poverty">
+            <!-- <div class="container-fluid"> -->
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <h2>Percent of School-Aged Population Whose Family is Below the Poverty Line</h2>
+                <br>
+                <img class="img-fluid" src="images/poverty_linear.png" alt="Kindergarten Poverty Linear">
+                <p>
+                  <strong>Figure 13</strong> - Linear regression plot of percent of Kindergarten population whose family income is below the poverty line versus pertussis incidents
+                </p>
+                <img class="img-fluid" src="images/below_poverty_log.png" alt="Kindergarten Poverty Logistic">
+                <p>
+                  <strong>Figure 14</strong> - Logistic regression plot of percent of Kindergarten population whose family income is below the poverty line to outbreak probability
+                </p>
+              </div>
+            </div>
+            <!-- </div> -->
+          </section>
+
+
+
+
+        </div>
       </div>
     </div>
-
-  </section>
-
-  <section id="born">
-    <!-- <div class="container-fluid"> -->
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Percent of Population that is Foreign Born</h2>
-          <br>
-          <img class="img-fluid" src="images/foreign_born.png" alt="Foreign Born">
-          <p>
-            <strong>Figure 9</strong> - Linear regression plot of population that is foreign born versus rate of pertussis incidents
-          </p>
-          <img class="img-fluid" src="images/foreign_born2.png" alt="Foreign Born">
-          <p>
-            <strong>Figure 10</strong> - Logistic regression plot of percent of population that is foreign born to outbreak probability
-          </p>
-        </div>
-      </div>
-    <!-- </div> -->
-  </section>
-
-  <section id="move">
-    <!-- <div class="container-fluid"> -->
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Percent of Population that Moved from Overseas in the Last Year</h2>
-          <br>
-          <img class="img-fluid" src="images/overseas_move.png" alt="Foreign Born">
-          <p>
-              <strong>Figure 11</strong> - Linear regression plot of population that moved from overseas in the past year versus rate of pertussis incidents
-          </p>
-          <img class="img-fluid" src="images/overseas_move.png" alt="Foreign Born">
-          <p>
-              <strong>Figure 12</strong> - Logistic regression plot of percent of population that moved from overseas in the past year to outbreak probability
-          </p>
-        </div>
-      </div>
-    <!-- </div> -->
-  </section>
-
-  <section id="poverty">
-    <!-- <div class="container-fluid"> -->
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Percent of School-Aged Population Whose Family is Below the Poverty Line</h2>
-          <br>
-          <p>
-          </p>
-        </div>
-      </div>
-    <!-- </div> -->
-  </section>
-
-
-
-
-  </div>
-  </div>
-  </div>
   </section>
 
   <section id="analysis">
