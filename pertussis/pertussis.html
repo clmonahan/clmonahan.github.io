@@ -43,9 +43,9 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#pertussis">Pertussis</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#vaccines">Vaccines</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#counties">Counties</a>
           </li>
@@ -137,16 +137,16 @@
     </div>
   </section>
 
-  <section id="vaccines" class="bg-light">
+  <!-- <section id="vaccines" class="bg-light">
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2>About Vaccines</h2>
+        <h2>About Vaccines</h2> -->
         <!-- <div class="embed-responsive embed-responsive-16by9">
           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/S3oZrMGDMMw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div> -->
         <!-- Insert image -->
         <!-- <p class="lead">Insert list of research about pertussis and why we don't want it coming back.</p> -->
-        <img class="img-fluid" src="images/vaccination.png" alt="Vaccination">
+        <!-- <img class="img-fluid" src="images/vaccination.png" alt="Vaccination">
         <br>
         <img class="img-fluid" src="images/herd_immunity.png" alt="Herd Immunity">
         <a
@@ -154,10 +154,10 @@
           <br><br>
           <img class="img-fluid" src="images/pertussis_vax.jpg" alt="Who Should Get Vaccinated?" class="center"></a>
         <br><br><br>
-        <h3>So What's the Problem?</h3>
+        <h3>So What's the Problem?</h3> -->
         <!-- <br><br>
         <img class="img-fluid" src="images/CDC.png" alt="Center for Disease Control"> -->
-        <br>
+        <!-- <br>
         <img class="img-fluid" src="images/anti_vaccination.png" alt="Anti-Vaccination">
         <br><br>
         <ul>
@@ -182,13 +182,13 @@
         </ul>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <section id="counties">
+  <section id="counties" class="bg-light">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>California County Information</h2><br>
+          <h2>California County Pertussis Outbreak Information</h2><br>
           <div class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" src="//plot.ly/~chelmo/46.embed" allowfullscreen></iframe>
           </div><br>
@@ -234,7 +234,7 @@
     </div>
   </section>
 
-  <section id="data" class="bg-light">
+  <section id="data">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -272,16 +272,16 @@
           <br>
           <p>
             Initially, only county population data over time was extracted from the US Census Bureau API. With the
-            second iteration, however,
-            additional 75 columns of data was pulled for each California county for each year between 2010 and 2016,
-            which was processed down to the following items:
+            second iteration, however, an
+            additional 75 columns of data was pulled for each California county for every year between 2010 and 2016.
+            These were processed down to the following items:
             <ul>
               <li><strong>County name</strong></li>
               <li><strong>Total county population</strong></li>
               <li><strong>Percent of population that was foreign born</strong> - Is it possible that people originally
                 from foreign countries travel back to those countries more often
                 and are thus more likely to spread pertussis?</li>
-              <li><strong>Percentof population that moved from overseas in the past year</strong> - Do people moving
+              <li><strong>Percent of population that moved from overseas in the past year</strong> - Do people moving
                 from overseas (either returning or immigrating to the US) have a tendency to bring
                 pertussis with them?</li>
               <li><strong>Percent of women ages 15-50 who had given birth in the previous year</strong> - This measure
@@ -296,7 +296,7 @@
               <li><strong>Average household size</strong> - Does higher household size lead to an increased spread of
                 disease, and hence a higher likelihood of an outbreak?</li>
               <li><strong>Percent of school-aged population not enrolled in public or private school</strong> - This
-                measure is being used as a proxy for students ages 3-17 who are homeschooled
+                measure is being used as a proxy for students ages 3-17 who are homeschooled.
               </li>
               <li><a href="https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html"><strong>Percent
                     of the school-aged population that was below the poverty line</strong></a> - Does poverty
@@ -363,7 +363,7 @@
     </div>
   </section>
 
-  <section id="findings">
+  <section id="findings" class="bg-light">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -508,7 +508,7 @@
   </div>
   </section>
 
-  <section id="analysis" class="bg-light">
+  <section id="analysis">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
@@ -536,10 +536,10 @@
               <li>Use social media feeds to detect possible incidents of pertussis.</li>
               <li>Potential factors:
                 <ul>
-                  <li>Population density of county or biggest city in county</li>
-                  <li>Vacinity to international airport</li>
-                  <li>Population demographics: nationality within communities (travel potential)</li>
-                  <li>Vaccination rates for general population</li>
+                  <li>Population density of county or biggest city in county.</li>
+                  <li>Proximity to international airport and number of flights to countries affected by pertussis.</li>
+                  <li>Number of adults who work outside the home versus from the home.</li>
+                  <li>Vaccination rates for general population.</li>
                 </ul>
               </li>
               <li>Zika virus machine learning model as inspiration for future model</li>
