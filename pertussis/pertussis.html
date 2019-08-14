@@ -2,15 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23954489-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23954489-3');
-  </script>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,7 +49,7 @@
             <a class="nav-link js-scroll-trigger" href="#counties">Counties</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#data">Data</a>
+            <a class="nav-link js-scroll-trigger" href="#data">Data & ETL</a>
           </li>
           <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#findings">Findings</a>
@@ -66,9 +57,9 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="#analysis">Analysis</a>
               </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#suggestions">Suggestions</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
@@ -218,7 +209,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Data Collection & Prep</h2>
+          <h2>Data Collection & ETL</h2>
             <br>
             <div class="img">
               <a href="https://data.chhs.ca.gov/dataset/vaccine-preventable-disease-cases-by-county-and-year">
@@ -248,7 +239,27 @@
             </div>
             <br>
             <p>
-              County population data over time was extracted from the US Census Bureau API.
+              Initially, only county population data over time was extracted from the US Census Bureau API. With the second iteration, however, 
+              additional 75 columns of data was pulled for each California county for each year between 2010 and 2016, which was processed down to the following items:
+                <ul>
+                  <li><strong>County name</strong></li>
+                  <li><strong>Total county population</strong></li>
+                  <li><strong>Percent of population that was foreign born</strong> - Is it possible that people originally from foreign countries travel back to those countries more often
+                  and are thus more likely to spread pertussis?</li>
+                  <li><strong>Percentof population that moved from overseas in the past year</strong> - Do people moving from overseas (either returning or immigrating to the US) have a tendency to bring 
+                  pertussis with them?</li>
+                  <li><strong>Percent of women ages 15-50 who had given birth in the previous year</strong> - This measure was considered because it is common for obstetricians to 
+                  encourage pregnant women to get immunized against pertussis in their third trimester, some of whom <a href="https://www.cdc.gov/pertussis/pregnant/mom/protection.html">encourage their families and friends to get immunized</a> as well (cocooning).</li>
+                  <li><strong>Percent of population that was school aged</strong> (3- to 17-years-old) - It was worth considering if a large school-aged population made it more likely for a 
+                  county to experience an outbreak because so many children were in close proximity to one another, or if it was less likely because children are required to be immunized to attend school.</li>
+                  <li><strong>Average household size</strong> - Does higher household size lead to an increased spread of disease, and hence a higher likelihood of an outbreak?</li>
+                  <li><strong>Percent of school-aged population not enrolled in public or private school</strong> - This measure is being used as a proxy for students ages 3-17 who are homeschooled
+                  </li>
+                  <li><a href="https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html"><strong>Percent of the school-aged population that was below the poverty line</strong></a> - Does poverty 
+                  play a role in the spread of pertussis, in particular at schools? It is possible that social programs make it more likely for low-income students to have access to immunizations. It's also possible that 
+                  <a href="http://money.com/money/5641663/anti-vaccine-rich-people/"> wealthy families are more likely to resist immunization or to have the ability to opt out from vaccinations</a>, whether legal/ethical or not.</li>
+                </ul>
+                <img src="images/df.png" alt="2010 DataFrame" class="center">
             </p>
             <br>
             <p> 
@@ -367,16 +378,16 @@
       </div>
     </section>
 
-  <section id="suggestions">
+  <!-- <section id="suggestions">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Suggestions to Increase Vaccination Rates</h2><br>
+            <h2>Suggestions to Increase Vaccination Rates</h2><br> -->
             <!-- <div class="embed-responsive embed-responsive-16by9"> -->
-              <img class="img-fluid" src="images/next.png" alt="Next Steps"><br><br>
+              <!-- <img class="img-fluid" src="images/next.png" alt="Next Steps"><br><br> -->
             <!-- </div> -->
 
-              <ul>
+              <!-- <ul>
                 <li>Provide more comprehensive education to parents about the benefits of vaccination</li>
                 <li>Allow only medical exemptions for non-vaccination in schools</li>
                 <li>Create a state/national registry of medical exemptions with issuing physician</li>
@@ -397,7 +408,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
